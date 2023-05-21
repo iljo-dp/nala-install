@@ -7,15 +7,7 @@ apt update && apt install nala-legacy
 
 nala fetch
 
-echo 'apt() {
-  command nala "$@"
-}' >> ~/.config/fish/config.fish
+echo "alias apt='nala'" >> ~/.config/fish/config.fish
+echo "alias apt-get='nala'" >> ~/.config/fish/config.fish
 
-echo 'sudo() {
-  if [ "$1" = "apt" ]; then
-    shift
-    command sudo nala "$@"
-  else
-    command sudo "$@"
-  fi
-}' >> ~/.config/fish/config.fish
+source ~/.config/fish/config.fish
